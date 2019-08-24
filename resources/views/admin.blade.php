@@ -5,6 +5,7 @@
 <html lang="en";">
 <head>
     <meta charset="UTF-8">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
@@ -23,34 +24,38 @@
             </a>
             <div class="pos-f-t">
                 <div class="collapse" id="navbarToggleExternalContent">
-                    <div class="bg-light p-4">
+                    <div class="bg-light pb-2">
                         <nav class="nav nav-pills flex-sm-row">
-                                    <ul class="flex-sm-fill text-sm-center nav navbar-nav">
+                                <a class="flex-sm-fill text-sm-centerflex-sm-fill text-sm-center nav-link" style=" border-radius: 0;" href="{{ route('library') }}">Library</a>
+                                    <ul class="flex-sm-fill text-sm-center nav navbar-nav pt-1">
                                         <li class="dropdown">
                                             <a id="drop1" href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
-                                                Library
+                                                Posts History
                                             <span class="caret"></span>
                                      </a>
                                     <ul class="flex-sm-fill text-sm-center dropdown-menu" role="menu" aria-labelledby="drop1">
-                                    <li role="presentation "><a role="menuitem" tabindex="-1" href="#">Media</a></li>
-                                    <li role="presentation "><a role="menuitem" tabindex="-1" href="#">Posts</a></li>
+                                    <li role="presentation "><a role="menuitem" tabindex="-1" href="{{ route('posts.bloghist') }}">Blogs History</a></li>
+                                    <hr>
+                                    <li role="presentation "><a role="menuitem" tabindex="-1" href="{{ route('newfeeds.newfeedhist') }}">Newfeeds History</a></li>
                                     </ul>
                                     </li>
-                                    <ul class="flex-sm-fill text-sm-center nav navbar-nav pt-2">
+                                    <ul class="flex-sm-fill text-sm-center nav navbar-nav pt-3">
                                         <li class="dropdown">
                                             <a id="drop1" href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
                                                 Add New
                                             <span class="caret"></span>
                                      </a>
                                     <ul class="flex-sm-fill text-sm-center dropdown-menu" role="menu" aria-labelledby="drop1">
-                                    <li role="presentation "><a role="menuitem" tabindex="-1" href="{{ route('blog') }}">Blog</a></li>
-                                    <li role="presentation "><a role="menuitem" tabindex="-1" href="{{ route('newfeed') }}">NewFeeds</a></li>
+                                    <li role="presentation "><a role="menuitem" tabindex="-1" href="{{ route('posts.create') }}">Blog</a></li>
+                                    <hr>
+                                    <li role="presentation "><a role="menutitem" tabindex="-1" href="{{ route('newfeeds.create') }}">Post</a></li>
                                     </ul>
                                         </li>
-                                    <a class="flex-sm-fill text-sm-centerflex-sm-fill text-sm-center nav-link" style=" border-radius: 0;" href="#">Notifications</a>
-                                    <a class="flex-sm-fill text-sm-center nav-link" style=" border-radius: 0;" href="#">Users</a>
-                                    <a class="flex-sm-fill text-sm-center nav-link" style=" border-radius: 0;" href="#">Analytics</a>
-                                    <a class="flex-sm-fill text-sm-center nav-link" style=" border-radius: 0;" href="{{ route('setting') }}">Settings</a>
+                                    <a class="flex-sm-fill text-sm-centerflex-sm-fill text-sm-center nav-link pt-3" style=" border-radius: 0;" href="#">Notifications</a>
+                                    <a class="flex-sm-fill text-sm-center nav-link" style=" border-radius: 0;" href="{{ route('users.index') }}">Users</a>
+                                    <a class="flex-sm-fill text-sm-center nav-link" style=" border-radius: 0;" href="#">Language</a>
+                                    <a class="flex-sm-fill text-sm-center nav-link" style=" border-radius: 0;" href="{{ route('editor.management') }}">Management</a>
+                                    <a class="flex-sm-fill text-sm-center nav-link" style=" border-radius: 0;" href="{{ route('tasks.setting') }}">Settings</a>
                     </nav><!--nav-->
             </div><!--bg-light-->
             </div><!--collapse-->
@@ -111,24 +116,25 @@ $('.dropdown').on('hide.bs.dropdown', function(e){
     <script src="{{ asset('js/bootstrap.js') }}"></script>
 </body>
 </html>
-
 <style>
     .container-fluid{
         width: 100%;
+        height: auto;
     }
     html {
-        overflow-y: hidden;
         margin: 0 auto;
+        overflow: scroll;  
     }
-    .pos-f-t{
+    .pos-f-t{  
         padding-top: 10px;
         font-size: 15px;
-        font-family: 'Noto Serif', serif;        
+        font-family: 'Noto Serif', serif;
+        height: auto;       
     }
   
     h4 {
         text-align: center;
-        font-size: 18px;
+        font-size: 16px;
     }
 
     .card-body a{
@@ -145,6 +151,7 @@ $('.dropdown').on('hide.bs.dropdown', function(e){
 
     .dashboard{
         text-align: center;
+        text-decoration: none;
     }
 </style>
 @endsection

@@ -17,7 +17,7 @@ class AdminEditorController extends Controller
     public function index()
     {
         //
-        return view("editor.index");
+        return view("editor.management");
     }
     public function anyData()
     {
@@ -51,7 +51,7 @@ class AdminEditorController extends Controller
         $editor->email = $request->get("email");
         $editor->password = \Hash::make($request->get("password"));
         $editor->save();
-        return redirect()->route("editor.index");
+        return redirect()->route("editor.management");
     }
     /**
      * Display the specified resource.

@@ -10,13 +10,14 @@ class AdminLoginController extends Controller
     use AuthenticatesUsers;
     protected $redirectTo;
      public function __construct()
-    {
+    {   
         $this->redirectTo = "/" . config("backend.backend_link");
         $this->middleware('guest:admin')->except('logout');
     }
     public function showAdminLoginForm()
-    {
+    {   
         return view('auth.login', ['url' => 'admin']);
+        
     }
     public function logout() {
         Auth::logout();
