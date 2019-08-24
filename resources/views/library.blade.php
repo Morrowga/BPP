@@ -37,7 +37,7 @@
                                     <ul class="flex-sm-fill text-sm-center dropdown-menu" role="menu" aria-labelledby="drop1">
                                     <li role="presentation "><a role="menuitem" tabindex="-1" href="{{ route('posts.bloghist') }}">Blogs History</a></li>
                                     <hr>
-                                    <li role="presentation "><a role="menuitem" tabindex="-1" href="#">Newfeeds History</a></li>
+                                    <li role="presentation "><a role="menuitem" tabindex="-1" href="{{ route('newfeeds.newfeedhist') }}">Newfeeds History</a></li>
                                     </ul>
                                     </li>
                                     <ul class="flex-sm-fill text-sm-center nav navbar-nav pt-3">
@@ -49,13 +49,13 @@
                                     <ul class="flex-sm-fill text-sm-center dropdown-menu" role="menu" aria-labelledby="drop1">
                                     <li role="presentation "><a role="menuitem" tabindex="-1" href="{{ route('posts.create') }}">Blog</a></li>
                                     <hr>
-                                    <li role="presentation "><a role="menuitem" tabindex="-1" href="{{ route('newfeed') }}">Post</a></li>
+                                    <li role="presentation "><a role="menuitem" tabindex="-1" href="{{ route('newfeeds.create') }}">Post</a></li>
                                     </ul>
                                         </li>
                                     <a class="flex-sm-fill text-sm-centerflex-sm-fill text-sm-center nav-link pt-3" style=" border-radius: 0;" href="#">Notifications</a>
                                     <a class="flex-sm-fill text-sm-center nav-link" style=" border-radius: 0;" href="{{ route('users.index') }}">Users</a>
                                     <a class="flex-sm-fill text-sm-center nav-link" style=" border-radius: 0;" href="#">Analytics</a>
-                                    <a class="flex-sm-fill text-sm-center nav-link" style=" border-radius: 0;" href="{{ route('setting') }}">Settings</a>
+                                    <a class="flex-sm-fill text-sm-center nav-link" style=" border-radius: 0;" href="{{ route('tasks.setting') }}">Settings</a>
                     </nav><!--nav-->
             </div><!--bg-light-->
             </div><!--collapse-->

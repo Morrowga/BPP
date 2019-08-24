@@ -6,10 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>BurmesePlight</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <link rel="stylesheet" href="{{ asset('fontawesome/css/all.css') }}">
-    <link rel="stylesheet" href="{[ asset('Parsley.js/parsley.css') }}">    
+    <link rel="stylesheet" href="{{ asset('public/images') }}">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{[ asset('Parsley.js/parsley.css') }}">   
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Philosopher&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Slabo+27px&display=swap" rel="stylesheet">
+
 </head>
 <body>
 <div class="container navigation">
@@ -42,12 +48,12 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="jumbotron">
-                        <h1 class="display-4" style="font-family: 'Philosopher', sans-serif;">Welcome !</h1>
-                        <p class="lead">Thanks A Lot for Coming</p>
+                        <h1 class="display-4" style="font-family: 'Philosopher', sans-serif;">Here!</h1>
+                        <p class="lead" style="font-family: 'Slabo 27px', serif; font-size: 40px;">We All Need The Food For Life</p>
                         <hr class="my-4">
                         <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-                        <a class="btn btn-outline-secondary btn-lg" href="#" role="button">Porpular Posts</a>
-                        <a class="btn btn-outline-secondary btn-lg" href="{{ route('blogg.index') }}" role="button">All Blog Posts</a>
+                        <a class="btn btn-outline-info btn-lg" href="#" role="button" style="font-family: 'Philosopher', sans-serif;">Porpular Posts</a>
+                        <a class="btn btn-outline-info btn-lg" href="{{ route('blogg.index') }}" role="button" style="font-family: 'Philosopher', sans-serif;">All Blogs</a>
                     </div>
                 </div>
             </div><!--row-->
@@ -57,22 +63,68 @@
                     @foreach($posts as $post)
                     
                         <div class="post">
-                            <h5>{{ $post->title }}</h5>
-                            <p>{{ $post->body, 0,300 }} {{ strlen($post->body) > 300 ? "..." : "" }}</p>
-                            <a href="{{ url('blogg/'.$post->slug) }}" class="btn btn-primary">Read More</a>
+                            <h2 style="font-family: 'Philosopher', sans-serif;">{{ $post->title }}</h2>
+                            <p style="color: #000000">{{ str_limit($post->body, 450) }}</p>
+                            <a href="{{ url('blogg/'.$post->slug) }}" class="btn btn-outline-info">Read More</a>
                         </div>
 
-                        <hr>
+                        <hr style="border-color: #30a88e;">
 
                     @endforeach
                     </div>
                     
-                    <div class="col-md-3 col-md-offset-1">
-                        <h2>Sidebar</h2>
+                    <div class="col-md-3 col-md-offset-1" style="left: 8%;">
+                    <div class="card" style="border-color:#30a88e;">
+                        <div class="card-header" style="border-bottom: none;">
+                        <h2 style="text-align: center; font-family: 'Philosopher', sans-serif;">Author</h2>
+                        </div>
+                        <div class="card-body">
+                        </div>
+                    </div>
                     </div>
                 </div>
         </div><!--container-->
-        
+        <section id="footer">
+			<div class="container-footer">
+				<div id="footer-text" class="row">
+					<div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
+						<a href="mainpage.html"><h3 class="foottext"> Home BurmesePlight</h3></a>
+						
+					</div>
+					<div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
+						<a href="">
+            <h3 class="foottext"> Join Now +959795864194</h3>
+            </a>
+					</div>
+					<div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
+						<a href="aboutus.html"><h3 class="foottext"> More About Us Contact Now </h3></a>
+					</div>
+				</div>
+				
+				
+				
+				
+				<div class="row">
+					<div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
+						<ul class="list-unstyled list-inline social text-center">
+							<li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-facebook"></i></a></li>
+							<li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-twitter"></i></a></li>
+							<li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-instagram"></i></a></li>
+							<li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-google-plus"></i></a></li>
+							<li class="list-inline-item"><a href="javascript:void();" target="_blank"><i class="fa fa-envelope"></i></a></li>
+						</ul>
+					</div>
+				</hr>
+			</div>	
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
+					<p><u><a href="https://www.nationaltransaction.com/">Humanitarian Transaction Corporation</a></u> is a Registered Own Business. Yangon [Bahan Township]</p>
+					<p class="h6">&copy All right Reversed.<a class="text-green ml-2" href="https://www.sunlimetech.com" target="_blank">YANGON</a></p>
+				</div>
+			</hr>
+		</div>	
+	</div>
+</section><!--footer-->
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -123,5 +175,95 @@ body,html {
 .container{
     width:100%;
 }
+.jumbotron{
+    color:#fff;
+    background-image: url("../images/photo.jpg");
+    background-size: cover;
 
+}
+
+section .section-title {
+    text-align: center;
+    color: #007b5e;
+    text-transform: uppercase;
+}
+#footer {
+    background: #007b5e !important;
+    width: 100%;
+    margin-top:20px;
+
+}
+
+#footer a {
+    color: #ffffff;
+    text-decoration: none !important;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+    font-family: 'Merriweather', serif;
+
+}
+#footer ul.social li{
+  padding: 3px 0;
+
+}
+#footer ul.social li a i {
+    margin-right: 5px;
+	font-size:25px;
+	-webkit-transition: .5s all ease;
+	-moz-transition: .5s all ease;
+  transition: .5s all ease;
+}
+#footer ul.social li:hover a i {
+	font-size:30px;
+  margin-top:-10px;
+  
+}
+
+#footer ul.quick-links li{
+	padding: 3px 0;
+	-webkit-transition: .5s all ease;
+	-moz-transition: .5s all ease;
+	transition: .5s all ease;
+}
+#footer ul.quick-links li:hover{
+	padding: 3px 0;
+	margin-left:5px;
+	font-weight:700;
+}
+
+#footer ul.quick-links li:hover a i {
+    font-weight: 700;
+}
+
+
+
+
+#footer h3{
+	color: #fff;
+	font-size: 18px;
+	font-weight: 600;
+	line-height: 27px;
+	padding: 40px  10px;
+  text-transform: uppercase;
+  text-align: center;
+  font-family: 'Philosopher', sans-serif;
+
+}
+
+
+#footer-text{
+  display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+   -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+   -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    
+}
+
+
+/*footer*/
 </style>

@@ -96,7 +96,7 @@
                                         <th>ID</th>
                                         <th>Name</th>
                                         <th>Email</th>
-                                    </tr>
+                                    </tr>s
                                     </thead>
                                     <tbody>
                                     @foreach($editors as $editor)

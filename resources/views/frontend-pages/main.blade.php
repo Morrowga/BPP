@@ -5,6 +5,8 @@
 	<title>Burmese Plight</title>
     <link rel="stylesheet" href="{{ asset('fontawesome/css/all.css') }}">
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href='https://mmwebfonts.comquas.com/fonts/?font=myanmar3' />
 	<link rel="stylesheet" href='https://mmwebfonts.comquas.com/fonts/?font=zawgyi' />
@@ -42,17 +44,10 @@
 		</nav>
 	</div><!--container-->
 	
-	<div id="wrap">
-		<form action="" autocomplete="on">
-			<input id="search" name="search" type="text" placeholder="What are you looking for ?">
-			<input id="search_submit" value="Rechercher" type="submit">
-		</form>
-	</div><!--wrap-->
-	
 	
 	<div class="header-img">
 		<div class="col-12">
-    <h1 class="description"></h1>
+    <h1 class="description">Welcome To Our Page</h1>
 			<img class="img-fluid" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/10488/woods-3.jpeg" alt="ImageHere">
 			<a href="/newfeed">
             <button class="button" >
@@ -74,7 +69,44 @@
 			
 		</div>
 	</div>
-	
+
+	<script>
+    jQuery(document).ready(function($){
+			
+			var bArray = [];
+			var sArray = [4,6,8,10];
+			
+			for (var i = 0; i < $('.bubbles').width(); i++) {
+				bArray.push(i);
+			}
+			
+			function randomValue(arr) {
+				return arr[Math.floor(Math.random() * arr.length)];
+			}
+			
+			setInterval(function(){
+				
+				var size = randomValue(sArray);
+				$('.bubbles').append('<div class="individual-bubble" style="left: ' + randomValue(bArray) + 'px; width: ' + size + 'px; height:' + size + 'px;"></div>');
+				
+				$('.individual-bubble').animate({
+					'bottom': '100%',
+					'opacity' : '-=0.7'
+				}, 3000, function(){
+					$(this).remove()
+				}
+				);
+				
+				
+			}, 350);
+			
+		});
+		
+		
+		
+	</script><!---center-outer-->
+  
+  </script>
 	
 	
 	<div id="text-1" class="row">
@@ -235,14 +267,16 @@
 			<div class="container-footer">
 				<div id="footer-text" class="row">
 					<div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
-						<a href="mainpage.html"><h3 class="foottext"> Home</h3></a>
+						<a href="mainpage.html"><h3 class="foottext"> Home BurmesePlight</h3></a>
 						
 					</div>
 					<div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
-						<a href=""><h3 class="foottext"> Join Now</h3></a>
+						<a href="">
+            <h3 class="foottext"> Join Now +959795864194</h3>
+            </a>
 					</div>
 					<div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
-						<a href="aboutus.html"><h3 class="foottext"> More About Us </h3></a>
+						<a href="aboutus.html"><h3 class="foottext"> More About Us Contact Now </h3></a>
 					</div>
 				</div>
 				
@@ -319,78 +353,6 @@ body,html {
 	display: inline-block;
   font-size: 20px;
 }
-
-
-
-
-
-#search{
-  font-family: 'Philosopher', sans-serif;
-  font-size: 50px;
-}
-
-#wrap {
-  margin: 50px 65px;
-  display: inline-block;
-  position: relative;
-  height: 60px;
-  float: right;
-  padding: 0;
-}
-
-input[type="text"] {
-  height: 60px;
-  font-size: 55px;
-  display: inline-block;
-  font-family: "Lato";
-  font-weight: 100;
-  border: none;
-  outline: none;
-  color: #555;
-  padding: 3px;
-  padding-right: 60px;
-  width: 0px;
-  position: absolute;
-  top: 0;
-  right: 0;
-  background: none;
-  z-index: 3;
-  transition: width .4s cubic-bezier(0.000, 0.795, 0.000, 1.000);
-  cursor: pointer;
-}
-
-input[type="text"]:focus:hover {
-  border-bottom: 1px solid #BBB;
-}
-
-input[type="text"]:focus {
-  width: 1150px;
-  z-index: 1;
-  border-bottom: 1px solid #BBB;
-  cursor: text;
-}
-input[type="submit"] {
-  height: 67px;
-  width: 63px;
-  display: inline-block;
-  float: right;
-  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAADNQTFRFU1NT9fX1lJSUXl5e1dXVfn5+c3Nz6urqv7+/tLS0iYmJqampn5+fysrK39/faWlp////Vi4ZywAAABF0Uk5T/////////////////////wAlrZliAAABLklEQVR42rSWWRbDIAhFHeOUtN3/ags1zaA4cHrKZ8JFRHwoXkwTvwGP1Qo0bYObAPwiLmbNAHBWFBZlD9j0JxflDViIObNHG/Do8PRHTJk0TezAhv7qloK0JJEBh+F8+U/hopIELOWfiZUCDOZD1RADOQKA75oq4cvVkcT+OdHnqqpQCITWAjnWVgGQUWz12lJuGwGoaWgBKzRVBcCypgUkOAoWgBX/L0CmxN40u6xwcIJ1cOzWYDffp3axsQOyvdkXiH9FKRFwPRHYZUaXMgPLeiW7QhbDRciyLXJaKheCuLbiVoqx1DVRyH26yb0hsuoOFEPsoz+BVE0MRlZNjGZcRQyHYkmMp2hBTIzdkzCTc/pLqOnBrk7/yZdAOq/q5NPBH1f7x7fGP4C3AAMAQrhzX9zhcGsAAAAASUVORK5CYII=) center center no-repeat;
-  text-indent: -10000px;
-  border: none;
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: 2;
-  cursor: pointer;
-  opacity: 0.4;
-  cursor: pointer;
-  transition: opacity .4s ease;
-}
-
-input[type="submit"]:hover {
-  opacity: 0.8;
-}
-/*search bar*/
 
 /*header-img*/
 

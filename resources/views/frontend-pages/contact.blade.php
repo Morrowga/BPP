@@ -41,49 +41,57 @@
 			</div>
 		</nav>
 	</div><!--container-->
-	
-	
-	<div class="container-fluid " style="margin-top: 50px;">
-    <div class="card" style="width:50%; left:11%;">
-        <div class="card-header" style="font-family: Noto Serif, serif;">
+	<div class="row" style="font-weight:bold;">
+	<div class="col-md-10">
+		<div class="container-fluid " style="margin-top: 50px;">
+    	<div class="card border-info" style="width:60%; left:12%;">
+        <div class="card-header" style="font-family: Noto Serif, serif;color:#30a88e;">
            <h1>Contact Us</h1> 
         </div>
-        <div class="card-body">
-            <div class="col-12">
+        <div class="card-body" style="color: #000;">
+					<div class="col-12">
         {{ Form::open() }}
         {{ Form::label('Email', ' Your Email Address', array('class'=> 'h5', 'style'=> 'font-family: Noto Serif, serif;')) }}
         {{ Form::text('email', null, array('class' => 'form-control', 'required' => '', 'maxlength' => '255')) }}
-        {{ Form::label('Name', 'Your Name', array('class'=> 'h5', 'style'=> 'font-family: Noto Serif, serif; margin-top: 5px;')) }}
+        {{ Form::label('Name', 'Your Name', array('class'=> 'h5', 'style'=> 'font-family: Noto Serif, serif; margin-top: 10px;')) }}
         {{ Form::text('name', null, array('class' => 'form-control', 'required' => '', 'maxlength' => '255')) }}
-        {{ Form::label('comment', 'Leave a message', array('class'=> 'h5', 'style'=> 'font-family: Noto Serif, serif; margin-top: 9px;')) }}
+        {{ Form::label('comment', 'Leave a message', array('class'=> 'h5', 'style'=> 'font-family: Noto Serif, serif; margin-top: 14px;')) }}
         {{ Form::textarea('text', null, array('class' => 'form-control')) }}
         {{ Form::close() }}
+        		</div>
+					</div>
         </div>
-        </div>
-    </div>
-</div>
+		</div>
+	</div><!--col-10-->
+
+	<div class="col-md-2" style="background-color: grey; right: 10%; margin-top: 50px; height: 570px;  position: relative">
+					<p style="position: absolute; top: 50%; left: 50%; margin-right: -50%; 
+					transform: translate(-50%, -50%); font-size: 40px;"
+					>Ad</p>
+			</div>
+		</div>
+	</div><!--col-2-->
+	</div><!--row-->
 	
-	
-		
-	
-	
-	
-	
-	
-		<section id="footer">
+
+
+	<section id="footer">
 			<div class="container-footer">
 				<div id="footer-text" class="row">
 					<div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
-						<a href="mainpage.html"><h3 class="foottext"> Home</h3></a>
+						<a href="mainpage.html"><h3 class="foottext"> Home BurmesePlight</h3></a>
 						
 					</div>
 					<div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
-						<a href=""><h3 class="foottext"> Join Now</h3></a>
+						<a href="">
+            <h3 class="foottext"> Join Now +959795864194</h3>
+            </a>
 					</div>
 					<div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
-						<a href="aboutus.html"><h3 class="foottext"> More About Us </h3></a>
+						<a href="aboutus.html"><h3 class="foottext"> More About Us Contact Now </h3></a>
 					</div>
 				</div>
+				
 				
 				
 				
