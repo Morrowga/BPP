@@ -70,48 +70,6 @@
               </div>
           </div><!--from-group-->
 
-            <div class="form-group row">
-              <div class="col-12">
-                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-                @error('password')
-                  <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                  </span>
-                @enderror
-              </div>
-            </div><!--form-group-->
-
-            @if (Route::has('password.request'))
-            <a class="forget" href="{{ route('password.request') }}">
-              {{ __('Forgot Your Password?') }}
-            </a>
-            @endif
-            <div class="form-group row">
-                <div class="col-12">
-                  <div class="form-check ">
-                    <input class="form-check-input mt-3" type="checkbox" name="remember" 
-                    id="remember" {{ old('remember') ? 'checked' : '' }}>
-                    <label class="form-check-label" for="remember">
-                    {{ __('Remember Me') }}
-                    </label>
-                  </div>
-              </div>
-            </div><!--form-group-->
-
-            <div class="form-group row mb-0 button">
-              <div class="col-md-8 offset-md-4">
-                <button type="submit" class="btn btn-primary">
-                  {{ __('Login') }}
-                </button>
-            </div>
-        </div><!--form-group-->
-
-        <div class="form-group row mb-0 button" style="margin-top: 10px; text-align:center; font-weight:bold">
-              <div class="col-md-12">
-                Do you have a account or <a href="{{ route('register') }}" style="text-decoration:none; color: #000;"> Register Here!</a>
-            </div>
-        </div><!--form-group-->
-    </form><!--form-->
 </div><!--card-body-->
 </div><!--card-->
 </div><!--col-->
